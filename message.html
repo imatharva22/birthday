@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fbc2eb 100%);
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .message {
+            font-size: 1.5rem;
+            color: #ff6f61;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            z-index: 10;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+            transition: transform 0.3s;
+        }
+
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        .balloon-left {
+            left: 5%;
+            background-color: #ff6f61;
+            animation-delay: 0s;
+        }
+
+        .balloon-right {
+            right: 5%;
+            background-color: #ffcc00;
+            animation-delay: 1s;
+        }
+
+        .small-pic {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .small-pic-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <img src="image.png" alt="Small Picture" class="small-pic">
+    <img src="happy-birthday-hello-kitty-v0-lz48g9kgdex91.webp" alt="Small Picture Right" class="small-pic-right">
+    <div class="balloon balloon-left"></div>
+    <div class="balloon balloon-right"></div>
+    <div class="message">
+        Dear Toshu,<br><br>
+        You are the light of my life and the reason for my smile. On this special day, I want to remind you how much you mean to me. Your kindness, intelligence, and beauty inspire me every day. I am so grateful to have you in my life. Happy 18th Birthday, my princess! Enjoy your day to the fullest. ❤️<br><br>
+        Love,<br>
+        Athu
+    </div>
+</body>
+</html>
