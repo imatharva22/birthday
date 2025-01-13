@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Message</title>
+    <title>for <u></u></title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -26,12 +26,16 @@
             100% { background-position: 100% 50%; }
         }
 
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+
         .message {
             font-size: 1.5rem;
             color: #ff6f61;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             max-width: 600px;
-            z-index: 10;
         }
 
         .balloon {
@@ -40,7 +44,6 @@
             height: 150px;
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
-            z-index: 1;
             transition: transform 0.3s;
         }
 
@@ -74,7 +77,6 @@
             border-radius: 50%;
             border: 2px solid #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
         }
 
         .small-pic-right {
@@ -86,7 +88,41 @@
             border-radius: 50%;
             border: 2px solid #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
+        }
+
+        .love-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
+        }
+
+        .love-button:hover {
+            transform: scale(1.1);
+            background-color: #ff3b2f;
+            box-shadow: 0 0.375rem 0.5rem rgba(0, 0, 0, 0.3);
+        }
+
+        .love-message {
+            display: none;
+            font-size: 3rem;
+            color: #ff6f61;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+        }
+
+        .blurred {
+            filter: blur(5px);
         }
     </style>
 </head>
@@ -95,11 +131,28 @@
     <img src="happy-birthday-hello-kitty-v0-lz48g9kgdex91.webp" alt="Small Picture Right" class="small-pic-right">
     <div class="balloon balloon-left"></div>
     <div class="balloon balloon-right"></div>
-    <div class="message">
-        Dear Toshu,<br><br>
-        You are the light of my life and the reason for my smile your my pichi pilla you know your simle is very dangerous right. On this special day, I want to remind you how much you mean to me. Your kindness, intelligence, beauty and your pureness makes me wanna be a better person everyday. I am so grateful to have you in my life. Happy 18th Birthday, my princess! Enjoy your day to the fullest. ❤️<br><br>
-        Your,<br>
-        Athu
+    <div class="content">
+        <div class="message">
+            Dear Toshu,<br><br>
+            You are the light of my life and the reason for my smile your my pichi pilla you know your simle is very dangerous right it makes me fall for you everyday. On this special day, I want to remind you how much you mean to me. Your kindness, intelligence, beauty and your pureness makes me wanna be a better person everyday. I am so grateful to have you in my life. Happy 18th Birthday, my princess! Enjoy your day to the fullest. ❤️<br><br>
+            your,<br>
+            Athu
+        </div>
+        <button class="love-button" onclick="showLoveMessage()">Click here again</button>
     </div>
+    <div class="love-message" id="loveMessage">I caught you smileing</div>
+
+    <script>
+        function showLoveMessage() {
+            const loveMessage = document.getElementById('loveMessage');
+            const content = document.querySelector('.content');
+            loveMessage.style.display = 'block';
+            content.classList.add('blurred');
+            setTimeout(() => {
+                loveMessage.style.display = 'none';
+                content.classList.remove('blurred');
+            }, 5000); // Increased blur duration to 5 seconds
+        }
+    </script>
 </body>
 </html>
