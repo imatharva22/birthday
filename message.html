@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>for <u></u></title>
+    <title>A Special Message</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            padding: 20px;
+            padding: 2vh 2vw;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -29,19 +29,20 @@
         .content {
             position: relative;
             z-index: 10;
+            max-width: 90vw;
         }
 
         .message {
-            font-size: 1.5rem;
+            font-size: 4vw;
             color: #ff6f61;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
+            text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.2);
+            max-width: 90vw;
         }
 
         .balloon {
             position: absolute;
-            width: 100px;
-            height: 150px;
+            width: 10vw;
+            height: 15vw;
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
             transition: transform 0.3s;
@@ -70,50 +71,50 @@
 
         .small-pic {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 50px;
+            top: 2vh;
+            left: 2vw;
+            width: 10vw;
             height: auto;
             border-radius: 50%;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 0.2vw solid #fff;
+            box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.1);
         }
 
         .small-pic-right {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 50px;
+            top: 2vh;
+            right: 2vw;
+            width: 10vw;
             height: auto;
             border-radius: 50%;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 0.2vw solid #fff;
+            box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.1);
         }
 
         .love-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
+            margin-top: 2vh;
+            padding: 1vh 2vw;
+            font-size: 2vw;
             background-color: #ff6f61;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 0.5vw;
             cursor: pointer;
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.25vw 0.375vw rgba(0, 0, 0, 0.2);
         }
 
         .love-button:hover {
             transform: scale(1.1);
             background-color: #ff3b2f;
-            box-shadow: 0 0.375rem 0.5rem rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0.375vw 0.5vw rgba(0, 0, 0, 0.3);
         }
 
         .love-message {
             display: none;
-            font-size: 3rem;
+            font-size: 6vw;
             color: #ff6f61;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.2);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -123,6 +124,34 @@
 
         .blurred {
             filter: blur(5px);
+        }
+
+        @media (max-width: 768px) {
+            .message {
+                font-size: 5vw;
+            }
+
+            .love-button {
+                font-size: 3vw;
+            }
+
+            .love-message {
+                font-size: 8vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .message {
+                font-size: 6vw;
+            }
+
+            .love-button {
+                font-size: 4vw;
+            }
+
+            .love-message {
+                font-size: 10vw;
+            }
         }
     </style>
 </head>
@@ -135,12 +164,12 @@
         <div class="message">
             Dear Toshu,<br><br>
             You are the light of my life and the reason for my smile your my pichi pilla you know your simle is very dangerous right it makes me fall for you everyday. On this special day, I want to remind you how much you mean to me. Your kindness, intelligence, beauty and your pureness makes me wanna be a better person everyday. I am so grateful to have you in my life. Happy 18th Birthday, my princess! Enjoy your day to the fullest. ❤️<br><br>
-            your,<br>
+            Love,<br>
             Athu
         </div>
-        <button class="love-button" onclick="showLoveMessage()">Click here again</button>
+        <button class="love-button" onclick="showLoveMessage()">Click me</button>
     </div>
-    <div class="love-message" id="loveMessage">I caught you smileing 😜</div>
+    <div class="love-message" id="loveMessage">I Caught u Smileing😜</div>
 
     <script>
         function showLoveMessage() {
